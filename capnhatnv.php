@@ -120,17 +120,6 @@
 
                 </form>
             </div>
-            <div class="col-6 mt-3">
-                <h2>Xóa thông tin nhân viên</h2>
-                <form method="POST" action="xoaTTNV.php">
-                    <label for="ID">Email của nhân viên cần xóa:</label>
-                    <input type="text" id="ID" name="IDDD" required>
-                    <Button onclick="return confirm('Bạn có muốn xóa thông tin của nhân viên này không')"
-                        href="xoaTTNV.php" class="btn btn-danger" type="submit"> Xóa </Button>
-
-                    <!-- <a onclick="return confirm('Bạn có muốn xóa thông tin của nhân viên này không')"  href="xoaTTNV.php" class="btn btn-danger" > Xóa </a>  -->
-                </form>
-            </div>
 
         </div>
     </div>

@@ -14,12 +14,12 @@ if ($conn->connect_error) {
 
 
 $quyen = $_POST['phanquyen'];
-$sql = "SELECT * FROM nhanvien WHERE email='" . $_POST["IDD"] . "'";
+$sql = "SELECT * FROM khachhang WHERE email='" . $_POST["IDD"] . "'";
 
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-  $capnhat_sqll = "UPDATE nhanvien SET MAQUYEN='$quyen' WHERE email='" . $_POST["IDD"] . "'";
+  $capnhat_sqll = "UPDATE khachhang SET MAQUYEN='$quyen' WHERE email='" . $_POST["IDD"] . "'";
   
   if (mysqli_query($conn, $capnhat_sqll)) {
     echo '<script language="javascript">

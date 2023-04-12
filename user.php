@@ -82,7 +82,7 @@
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Giới tính</label>
 
-                        <div class="form-check">
+                        <div class="form-check" name="gioitinh">
                             <input class="form-check-input" type="radio" name="gioitinh" id="flexRadioDefault1"
                                 value="nam">
                             <label class="form-check-label" for="flexRadioDefault1">

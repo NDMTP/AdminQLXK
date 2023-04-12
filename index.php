@@ -137,16 +137,20 @@ $tong += $tongdoanhthu;
         <div class="m-2">
             <form action="thongke.php" method="POST" id="sb">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-4">
                         Nhập ngày bắt đầu
                         <input type="date" name="tgbd" value="<?php 
-            $ngay = $_SESSION['ngaybd'];
-            echo $ngay
-            ?>">
+                        $ngay = $_SESSION['ngaybd'];
+                        echo $ngay
+                        ?>">
                     </div>
-                    <div class="col-5">
+                    <div class="col-4">
                         Nhập ngày Kết thúc
-                        <input type="date" name="kt" value="<?php echo $_SESSION['ngaykt'] ?>" oninput="submitForm()">
+                        <input type="date" name="kt" value="<?php echo $_SESSION['ngaykt'] ?>">
+                    </div>
+                    <div class='col-4'> Thống kê <br>
+                        <button type="button" class="btn btn-success mt-2" onclick="submitForm()">
+                            chọn</button>
                     </div>
                 </div>
             </form>

@@ -50,7 +50,7 @@ die("Connection failed: " . $conn->connect_error);
                         $_SESSION["matkhau"]=$row["password"];
                         $_SESSION["CCCD"]=$row["CCCD"];
                         $_SESSION["QUYENNV"]=$row["MAQUYEN"];
-                        header('Location: index.php');             
+                        header('Location: indexnv.php');             
                      
                     }
                     else{
