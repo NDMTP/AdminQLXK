@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 $email = $_POST["email"];
-$sql = "SELECT * FROM nhanvien WHERE email = '$email'";
+$sql = "SELECT * FROM khachhang WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -26,20 +26,15 @@ if ($result->num_rows > 0) {
 }
 // Thêm khách hàng vào cơ sở dữ liệu
 $date = date_create($_POST["ngaysinh"]);
-    $sql = "INSERT INTO khachhang (EMAIL, SDT, HOTEN, DIACHI, NAMSINH, CCCD,GIOITINH)
+    $sql = "INSERT INTO khachhang (EMAIL, SDT, HOTEN, DIACHI, NAMSINH, CCCD,GIOITINH,MAQUYEN)
     VALUES ('".$_POST["email"] ."', '".$_POST["ho_ten"] ."', '".$_POST["so_dien_thoai"] ."',
-     '".$_POST["dia_chi"] ."','".$date ->format('Y-m-d') ."','".$_POST["can_cuoc"] ."','".$_POST["gioitinh"] ."' ) ";
+     '".$_POST["dia_chi"] ."','".$date ->format('Y-m-d') ."','".$_POST["can_cuoc"] ."','".$_POST["gioitinh"] ."' ,'".$_POST["phanquyen"] ."') ";
 
  $result = $conn->query($sql);
-  // Thêm nhân viên vào cơ sở dữ liệu
-$date = date_create($_POST["ngaysinh"]);
-$sql_them = "INSERT INTO Nhanvien (MaQuyen,EMAIL,HOTEN, SDT, DIACHI, NAMSINH, CCCD,GIOITINH)
-VALUES ('".$_POST["phanquyen"] ."','".$_POST["email"] ."', '".$_POST["ho_ten"] ."', '".$_POST["so_dien_thoai"] ."',
-'".$_POST["dia_chi"] ."','".$date ->format('Y-m-d') ."','".$_POST["can_cuoc"] ."','".$_POST["gioitinh"] ."' ) ";
 
-if ($conn->query($sql_them) == TRUE) {
+if ( $result) {
   echo '<script language="javascript">
-  alert("Đăng ký thành công!");
+  alert("Thêm thành công!");
   history.back();
     </script>';
 } else {

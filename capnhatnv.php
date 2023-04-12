@@ -74,15 +74,16 @@
                     <div class="row">
                         <div class="col-6">
                             <label for="can_cuoc">Giới tính:</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gioitinh" id="flexRadioDefault1">
+                            <div class="form-check" name="gioitinh">
+                                <input class="form-check-input" type="radio" name="gioitinh" value="Nam"
+                                    id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Nam
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gioitinh" id="flexRadioDefault2"
-                                    checked>
+                                <input class="form-check-input" type="radio" name="gioitinh" value="Nữ"
+                                    id="flexRadioDefault2" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Nữ
                                 </label>

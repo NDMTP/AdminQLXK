@@ -12,7 +12,7 @@ session_start();
     <meta name="author" content="">
 
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Logo-icon.png">
-    
+
 
     <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -102,8 +102,8 @@ session_start();
                                 <!-- anh dai dien -->
                                 <img src="assets/images/profile.jpg" alt="user" class="rounded-circle" width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Xin chào</span> <span
-                                        class="text-dark"> Mỹ Ái</span> <i data-feather="chevron-down"
-                                        class="svg-icon"></i></span>
+                                        class="text-dark"> <?php echo  $_SESSION["name"]?></span> <i
+                                        data-feather="chevron-down" class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <a class="dropdown-item" href="user.php"><i data-feather="user"
@@ -144,27 +144,37 @@ session_start();
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                                 aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
                                     class="hide-menu">Cập Nhật</span></a>
-                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="capnhatnv.php" class="sidebar-link">
-                                        <span class="hide-menu"> Nhân
-                                            Viên
-                                        </span></a>
-                                </li>
-
-                                <li class="sidebar-item"><a href="CNTuyenxe.php" class="sidebar-link"><span
-                                            class="hide-menu"> Tuyến
-                                            Xe
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item"><a href="capnhatchuyenxe.php" class="sidebar-link"><span
-                                            class="hide-menu"> Chuyến Xe
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item"><a href="capnhatsp.php" class="sidebar-link"><span
-                                            class="hide-menu"> Xe
-                                        </span></a>
-                                </li>
-                            </ul>
+                            <?php
+             
+                                if(isset($_SESSION["MAQUYEN"])){
+                                  echo'
+                                  <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                  <li class="sidebar-item"><a href="capnhatnv.php" class="sidebar-link">
+                                          <span class="hide-menu"> Nhân
+                                              Viên
+                                          </span></a>
+                                  </li>
+  
+                                  <li class="sidebar-item"><a href="CNTuyenxe.php" class="sidebar-link"><span
+                                              class="hide-menu"> Tuyến
+                                              Xe
+                                          </span></a>
+                                  </li>
+                                  <li class="sidebar-item"><a href="capnhatchuyenxe.php" class="sidebar-link"><span
+                                              class="hide-menu"> Chuyến Xe
+                                          </span></a>
+                                  </li>
+                                  <li class="sidebar-item"><a href="capnhatxe.php" class="sidebar-link"><span
+                                              class="hide-menu"> Xe
+                                          </span></a>
+                                  </li>
+                              </ul>
+                                  ';
+                                }
+                                if(isset($_SESSION["QUYENNV"])) echo'
+                                <li></li>
+                                ';
+                            ?>
                         </li>
 
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
@@ -186,13 +196,20 @@ session_start();
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                                 aria-expanded="false"><i data-feather="bar-chart" class="feather-icon"></i><span
                                     class="hide-menu">Thống Kê</span></a>
-                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                            <?php
+                            if(isset($_SESSION["MAQUYEN"])){
+                                echo'<ul aria-expanded="false" class="collapse  first-level base-level-line">
                                 <li class="sidebar-item"><a href="bieudo.php" class="sidebar-link"><span
                                             class="hide-menu"> Thống kê
                                         </span></a>
                                 </li>
 
-                            </ul>
+                            </ul>';
+                            }
+                            if(isset($_SESSION["QUYENNV"])) echo'
+                            <li></li>
+                            ';
+                            ?>
                         </li>
                     </ul>
                 </nav>

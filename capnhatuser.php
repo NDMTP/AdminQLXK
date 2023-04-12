@@ -5,6 +5,7 @@
     include("header.php");
 ?>
 <!-- ============================================================== -->
+
 <head>
     <title>Thông Tin Khách Hàng</title>
 </head>
@@ -61,7 +62,6 @@
                                         <th>Địa Chỉ</th>
                                         <th>Giới Tính</th>
                                         <th>Tuổi</th>
-                                        <th>Nghề Nghiệp</th>
                                         <th>Số lần đặt vé</th>
                                     </tr>
                                 </thead>
@@ -101,7 +101,6 @@ if ($conn->connect_error) {
                         <td>".$row["DIACHI"]."</td>
                         <td>".$row["GIOITINH"]."</td>
                         <td>".$diff->format('%y')."</td>
-                        <td>".$row["NGHENGHIEP"]."</td>
                         <td>".$tong["tongve"]."</td>
                 </tr>
                     ";

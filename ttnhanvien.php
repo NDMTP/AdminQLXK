@@ -5,6 +5,7 @@
     include("header.php");
 ?>
 <!-- ============================================================== -->
+
 <head>
     <title>Thông Tin Nhân Viên</title>
 </head>
@@ -75,20 +76,18 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
                     
-                    $sql="SELECT * FROM nhanvien ";
+                    $sql="SELECT * FROM khachhang where maquyen='2' ";
                     $result1 = $conn->query($sql);
-                  // print_r($result1);
                 while( $row = $result1->fetch_assoc() ){
                     $birthday = $row["NAMSINH"]; 
                     $today = date('Y-m-d'); 
                     $diff = date_diff(date_create($birthday), date_create($today)); 
-                    // so lan mua;
+                    // so lan mua
                     $solanmua= "SELECT COUNT(maphieu)  AS tongve  FROM
                     khachhang ,phieudatve WHERE khachhang.email=phieudatve.email
                     and khachhang.email= '".$row["EMAIL"]."'" ;
                     $result = mysqli_query($conn, $solanmua);
                     $tong=$result->fetch_assoc();
-                   
                     
                     echo"
                     <tr>
@@ -102,7 +101,7 @@ if ($conn->connect_error) {
                     ";
                 }
 
-                $tongkh= "SELECT COUNT(EMAIL) AS TONGKH FROM nhanvien";
+                $tongkh= "SELECT COUNT(EMAIL) AS TONGKH FROM khachhang where maquyen='2' ";
                 $result = mysqli_query($conn, $tongkh);
                 $tong1= $result->fetch_assoc();
                     echo"
