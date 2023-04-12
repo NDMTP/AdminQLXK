@@ -16,17 +16,21 @@ if ($conn->connect_error) {
 
 // Xóa dữ liệu từ CSDL dựa trên ID
 
+$sql = "DELETE FROM nhanvien WHERE email='" . $_POST['IDDD'] . "'";
+$result = mysqli_query($conn, $sql);
 
-
-$sql = "DELETE FROM  nhanvien where email='".$_POST['IDDD']."'";
-if (mysqli_query($conn, $sql)) {
-	echo '<script language="javascript">
+if (mysqli_affected_rows($conn) == 0) {
+    echo '<script language="javascript">
+    alert("Không tìm thấy email để xóa!");
+    history.back();
+    </script>';
+} else if ($result) {
+    echo '<script language="javascript">
     alert("Xóa nhân viên thành công!");
     history.back();
-     </script>';
+    </script>';
 } else {
-	echo "Lỗi khi xóa nhân viên: " . mysqli_error($conn);
+    echo "Lỗi khi xóa nhân viên: " . mysqli_error($conn);
 }
-
 
 ?>

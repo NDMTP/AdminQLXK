@@ -14,25 +14,25 @@ if ($conn->connect_error) {
 
 
 $quyen = $_POST['phanquyen'];
-$sql= "Select * FROM  nhanvien where email='".$_POST["IDD"]."'";
+$sql = "SELECT * FROM nhanvien WHERE email='" . $_POST["IDD"] . "'";
 
-if(mysqli_query($conn, $sql)){
+$result = mysqli_query($conn, $sql);
 
-$capnhat_sql = "UPDATE khachhang SET  MaQuyen='$quyen' where email='".$_POST["IDD"]."'";
-// echo $capnhat_sql; exit;
-
-if (mysqli_query($conn, $capnhat_sql)) {
-    echo "Chỉnh sửa nhân viên thành công";
-} else {
-
-    echo "Lỗi khi sửa nhân viên: " . mysqli_error($conn);
-}
-}
-else {
-  echo"Không tìm thấy email";
-}
-echo '<script language="javascript">
-    alert("Cập Nhật thành công!");
+if (mysqli_num_rows($result) > 0) {
+  $capnhat_sqll = "UPDATE nhanvien SET MAQUYEN='$quyen' WHERE email='" . $_POST["IDD"] . "'";
+  
+  if (mysqli_query($conn, $capnhat_sqll)) {
+    echo '<script language="javascript">
+    alert("Chỉnh sửa chức vụ nhân viên thành công!");
     history.back();
-     </script>';
-?>
+    </script>';
+    
+  } else {
+    echo "Lỗi khi sửa nhân viên: " . mysqli_error($conn);
+  }
+} else {
+  echo '<script language="javascript">
+    alert("Không tìm thấy email");
+    history.back();
+  </script>';
+}

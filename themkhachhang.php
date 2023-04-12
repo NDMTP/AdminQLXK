@@ -15,8 +15,8 @@ if ($conn->connect_error) {
 
 // Thêm nhân viên vào cơ sở dữ liệu
 $date = date_create($_POST["ngaysinh"]);
-    $sql = "INSERT INTO khachhang (NGHENGHIEP, EMAIL, SDT, HOTEN, DIACHI, NAMSINH, CCCD,GIOITINH)
-    VALUES ('".$_POST["nghe_nghiep"] ."','".$_POST["email"] ."', '".$_POST["ho_ten"] ."', '".$_POST["so_dien_thoai"] ."',
+    $sql = "INSERT INTO khachhang (EMAIL, SDT, HOTEN, DIACHI, NAMSINH, CCCD,GIOITINH)
+    VALUES ('".$_POST["email"] ."', '".$_POST["ho_ten"] ."', '".$_POST["so_dien_thoai"] ."',
      '".$_POST["dia_chi"] ."','".$date ->format('Y-m-d') ."','".$_POST["can_cuoc"] ."','".$_POST["gioitinh"] ."' ) ";
 
 if ($conn->query($sql) == TRUE) {
