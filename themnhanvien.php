@@ -24,6 +24,13 @@ if ($result->num_rows > 0) {
      </script>';
     exit();
 }
+// Thêm khách hàng vào cơ sở dữ liệu
+$date = date_create($_POST["ngaysinh"]);
+    $sql = "INSERT INTO khachhang (EMAIL, SDT, HOTEN, DIACHI, NAMSINH, CCCD,GIOITINH)
+    VALUES ('".$_POST["email"] ."', '".$_POST["ho_ten"] ."', '".$_POST["so_dien_thoai"] ."',
+     '".$_POST["dia_chi"] ."','".$date ->format('Y-m-d') ."','".$_POST["can_cuoc"] ."','".$_POST["gioitinh"] ."' ) ";
+
+ $result = $conn->query($sql);
   // Thêm nhân viên vào cơ sở dữ liệu
 $date = date_create($_POST["ngaysinh"]);
 $sql_them = "INSERT INTO Nhanvien (MaQuyen,EMAIL,HOTEN, SDT, DIACHI, NAMSINH, CCCD,GIOITINH)

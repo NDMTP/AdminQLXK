@@ -115,7 +115,7 @@
                         <option value="2">Nhân Viên</option>
                         <option value="3">Khách Hàng</option>
                     </select>
-                    <input type="submit"> Sửa </input>
+                    <input type="submit"></input>
 
                 </form>
             </div>
