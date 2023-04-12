@@ -50,7 +50,7 @@
         <!-- ============================================================== -->
         <!-- Bang thong ke -->
         <div class="row">
-            <div class="col-12">
+            <div class="col-8">
                 <h2>Thêm nhân viên</h2>
                 <form method="POST" action="themnhanvien.php">
                     <label for="ID">Email:</label>
@@ -103,11 +103,10 @@
                     <input type="submit" class="mt-2" value="Thêm nhân viên">
                 </form>
             </div>
-            <div class="col-6 mt-3">
-
-                <h2>Chỉnh sửa thông tin nhân viên</h2>
+            <div class="col-4 mt-3">
+                <h2>Cập Nhật quyền</h2>
                 <form method="POST" action="capnhatCS.php">
-                    <label for="ID">email nhân viên cần chỉnh sửa:</label>
+                    <label for="ID">email:</label>
                     <input type="text" id="ID" name="IDD" required>
                     <label for="can_cuoc">Phân Quyền:</label>
                     <select class="form-select" aria-label="Default select example" name="phanquyen">
@@ -116,7 +115,7 @@
                         <option value="2">Nhân Viên</option>
                         <option value="3">Khách Hàng</option>
                     </select>
-                    <input type="submit"></input>
+                    <input type="submit" class='mt-3'></input>
 
                 </form>
             </div>
