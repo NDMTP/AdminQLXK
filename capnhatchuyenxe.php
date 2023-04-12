@@ -39,10 +39,35 @@
                     class="row g-3 needs-validation" required>
 
                     <div class="col-md-3">
-                        <label for="validationCustom01" class="form-label">ID Chuyến Xe</label>
-                        <input type="text" name="idchuyenxe" class="form-control" id="validationCustom01" required>
+    <label for="validationCustom01" class="form-label">ID_Tuyến</label>
+    <?php
+        // Kết nối đến cơ sở dữ liệu
+        $conn = mysqli_connect("localhost", "root", "", "qlbanvexe");
+        
+        // Kiểm tra kết nối
+        if (!$conn) {
+            die("Kết nối không thành công: " . mysqli_connect_error());
+        }
+        
+        // Truy vấn để lấy ID_Tuyến tự động
+        $sql = "SELECT MAX(ID_CHUYENXE) + 1 AS next_id FROM chuyenxe";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $next_id = "CX0" . $row['next_id'];
+        
+        // Đóng kết nối
+        mysqli_close($conn);
+    ?>
+    <input type="text" name="idchuyenxe" class="form-control" id="validationCustom01" value="<?php echo $next_id; ?>" required>
+</div>
+
+                    <div class="col-md-5">
+                        <label for="validationCustom12" class="form-label">Biển số</label>
+                        <input type="text" name="bienso" class="form-control" id="validationCustom12" required>
 
                     </div>
+
+
                     <div class="col-md-4">
                         <label for="validationCustom04" class="form-label">ID Tuyến</label>
                         <?php
@@ -50,6 +75,7 @@
               ?>
 
                     </div>
+                    
                     <div class="col-md-5">
                         <label for="validationCustom01" class="form-label">Tên Chuyến Xe</label>
                         <input type="text" name="tenchuyenxe" class="form-control" id="validationCustom01" required>
