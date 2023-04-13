@@ -13,7 +13,6 @@ if ($conn->connect_error) {
 }
 
 $id_chuyenxe = $_POST["idchuyenxe"];
-$bienso = $_POST["bienso"];
 $id_tuyen = $_POST["idtuyen"];
 $tenchuyenxe = $_POST["tenchuyenxe"];
 $thoidiemditt = $_POST["thoidiemdithucte"];
@@ -60,8 +59,8 @@ if ($tgdukienkhoihanh > $tgdukien_den) {
 } 
 
 // Thêm chuyến xe mới vào bảng chuyenxe
-$sql = "INSERT INTO chuyenxe (ID_CHUYENXE ,BIENSO, ID_TUYEN, TENCHUYENXE, THOIDIEMDITT, THOIDIEMDENTT, TGDUKIENDEN, TGDUKIENKHOIHANH, GIA)
-VALUES ('$id_chuyenxe','$bienso', '$id_tuyen', '$tenchuyenxe', '$thoidiemditt', '$thoidiemdentt', '$tgdukien_den', '$tgdukienkhoihanh', '$gia')";
+$sql = "INSERT INTO chuyenxe (ID_CHUYENXE, ID_TUYEN, TENCHUYENXE, THOIDIEMDITT, THOIDIEMDENTT, TGDUKIENDEN, TGDUKIENKHOIHANH, GIA)
+VALUES ('$id_chuyenxe', '$id_tuyen', '$tenchuyenxe', '$thoidiemditt', '$thoidiemdentt', '$tgdukien_den', '$tgdukienkhoihanh', '$gia')";
 
 if ($conn->query($sql) == TRUE) {
     echo '<script language="javascript">
