@@ -125,9 +125,17 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-4">
                         <br></br>
-                        <button class="btn btn-primary" type="submit">Thêm chuyến xe</button>
+                        <button class="btn btn-success" type="submit" name="action" value="themchuyenxe">Thêm chuyến xe</button>
+                    </div>
+                    <div class="col-4">
+                        <br></br>
+                        <button class="btn btn-primary" type="submit" name="action" value="suachuyenxe">Sửa chuyến xe</button>
+                    </div>
+                    <div class="col-4">
+                        <br></br>
+                        <button class="btn btn-danger" type="submit" name="action" value="xoachuyenxe">Xóa chuyến xe</button>
                     </div>
                 </form>
 

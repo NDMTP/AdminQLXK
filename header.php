@@ -198,6 +198,21 @@ session_start();
 
                             </ul>
                         </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                aria-expanded="false"><i data-feather="bar-chart" class="feather-icon"></i><span
+                                    class="hide-menu">Danh sách tour</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item"><a href="danhsachtuyenxe.php" class="sidebar-link"><span
+                                            class="hide-menu"> Danh sách tuyến xe
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="danhsachchuyenxe.php" class="sidebar-link"><span
+                                            class="hide-menu"> Danh sách chuyến xe
+                                        </span></a>
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- ket thuc nav -->
