@@ -105,20 +105,6 @@ if ($songaytrongtuan < 1) {
     $sql_check = "SELECT * FROM tuyenxe WHERE ID_TUYEN = '$id_tuyen'";
 $result_check = mysqli_query($conn, $sql_check);
 
-if ($songaytrongtuan > 7) {
-    echo '<script language="javascript">
-    alert("Số ngày trong tuần chạy phải nhỏ hơn hoặc bằng 7!");
-    history.back();
-     </script>';
-    exit();
-  }
-if ($songaytrongtuan < 1) {
-    echo '<script language="javascript">
-    alert("Số ngày trong tuần chạy phải lớn hơn 0!");
-    history.back();
-     </script>';
-    exit();
-  }
 
   $query = "DELETE FROM tuyenxe
   WHERE ID_TUYEN = '$id_tuyen'

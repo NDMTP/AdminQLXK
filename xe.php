@@ -11,6 +11,15 @@ if (!$conn) {
 }
 
 if ($_POST['action'] == 'themXe') {
+  $sql_check = "SELECT * FROM xe WHERE BIENSO = '".$idxe."'";
+$result_check = mysqli_query($conn, $sql_check);
+if (mysqli_num_rows($result_check) > 0) {
+    echo '<script language="javascript">
+    alert("Xe đã tồn tại rồi kìa!");
+    history.back();
+     </script>';
+    exit();
+}else{
   $query = "INSERT INTO xe VALUES ('$idxe', '$idloaixe', '$name')";
   $result = mysqli_query($conn, $query);
   if (!$result) {
@@ -21,6 +30,7 @@ if ($_POST['action'] == 'themXe') {
     history.back();
      </script>';
   }
+}
 } else if ($_POST['action'] == 'suaXe') {
   $query = "UPDATE xe set id_loai = '$idloaixe', tenxe = '$name' WHERE bienso = '$idxe'";
   $result = mysqli_query($conn, $query);
