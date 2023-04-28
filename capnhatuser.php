@@ -59,6 +59,7 @@ include("header.php");
                                         <th>Họ Tên</th>
                                         <th>Email</th>
                                         <th>Địa Chỉ</th>
+                                        <th>Số Điện Thoại</th>
                                         <th>Đặt vé</th>
                                         <th>Số lần đặt vé</th>
                                     </tr>
@@ -98,6 +99,7 @@ include("header.php");
                         <td>" . $row["HOTEN"] . "</td>
                         <td>" . $row["EMAIL"] . "</td>
                         <td>" . $row["DIACHI"] . "</td>
+                        <td>" . $row["SDT"] . "</td>
                         <td><button class=\"btn btn-info\" type=\"button\" data-toggle=\"modal\" data-target=\"#myModal\"
                         data-hoten=\"" . $row["HOTEN"] . "\" data-sdt=\"" . $row["SDT"] . "\"
                         data-email=\"" . $row["EMAIL"] . "\">Đặt vé</button></td>

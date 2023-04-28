@@ -159,19 +159,7 @@ session_start();
 
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                aria-expanded="false"><span class="hide-menu">Đặt vé hộ</span></a>
-                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="hide-menu"> Đặt
-                                            vé
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="hide-menu"> Hóa
-                                            Đơn
-                                        </span></a>
-                                </li>
-                            </ul>
-                        </li>
+            
                     </ul>
                 </nav>
                 <!-- ket thuc nav -->
